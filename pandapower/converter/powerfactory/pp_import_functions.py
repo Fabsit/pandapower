@@ -3316,6 +3316,8 @@ def create_stactrl(net, item):
     for s in machines:
         if s.ip_ctrl == 1:
             gt = "other"
+        elif not hasattr(s, 'av_mode'):
+            gt = "other"
         elif s.av_mode == "constq":
             gt = "sgen"
         elif s.av_mode == "constv":
